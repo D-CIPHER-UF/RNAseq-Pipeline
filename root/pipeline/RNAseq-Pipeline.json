@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "RNAseq-Pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -52,6 +52,30 @@
 				"dependsOn": [
 					{
 						"activity": "Quality Control - FastQC",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"scripts": [],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			},
+			{
+				"name": "Align Reads - RSEM",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "Probe Trimming - Trimmomatic",
 						"dependencyConditions": [
 							"Succeeded"
 						]
