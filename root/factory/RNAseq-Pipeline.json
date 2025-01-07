@@ -1,0 +1,9 @@
+{
+	"name": "RNAseq-Pipeline",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "492f048a-0853-4c4a-8d94-a7c7de9f7fde",
+		"tenantId": "0d4da0f8-4a31-4d76-ace6-0a62331e1b84"
+	}
+}
